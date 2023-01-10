@@ -10,12 +10,10 @@ export default function ArticleList() {
 
   useEffect(() => {
     getAllArticles().then((data) => {
-        console.log(data, "<< this is the data")
       setArticleList(data.articles);
       setIsLoading(false);
     });
   }, []);
-  console.log(ArticleList, "this is the ArticleList")
 
   if (isLoading) {
     return <p>Loading...</p>;
