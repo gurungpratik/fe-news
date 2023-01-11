@@ -5,9 +5,9 @@ export default function CommentCard(comment) {
 
   return (
     <li className="Comment-Card">
-      <h3>{comment.body}</h3>
-      <h3>{comment.author}</h3>
-      <h3>{commentDate}</h3>
+      <h5>{comment.body}</h5>
+      <h5 className="Comment-Author">{comment.author}</h5>
+      <h5 className="Comment-Date">{commentDate}</h5>
     </li>
   );
 }
