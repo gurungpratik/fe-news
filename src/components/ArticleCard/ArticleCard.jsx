@@ -9,7 +9,7 @@ export default function ArticleCard({ title, author, article_id }) {
       <h4>{author}</h4>
       <nav>
         <Link to= {`/articles/${article_id}`}>
-          <button>Read more</button>
+          <button className="Article-Button">Read more</button>
         </Link>
       </nav>
     </li>

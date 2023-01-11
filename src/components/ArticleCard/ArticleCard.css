@@ -7,6 +7,13 @@
     width: 17rem;
     overflow-wrap: break-word;
     border: 10px solid;
-    border-color: #38B8EF;
+    border-color: #38b8ef;
     border-radius: 10px;
+}
+
+.Article-Button {
+    font-family: Arial;
+    color: #ffffff;
+    background-color: #38B8EF;
+    border-color: #38B8EF; 
 }

@@ -27,19 +27,8 @@ export default function SingleArticle() {
         <h2>{article.title}</h2>
         <h4>{article.body}</h4>
         <h5>{article.author}</h5>
+        <h5>{article.created_at}</h5>
       </div>
     </main>
   );
 }
-
-// contains:
-// - article title
-// - Full article body
-// - Date posted
-// - Article author w/ avatar???
-
-// Method:
-// - Put an on click button on each of the article cards
-// - Use Link to connect the articles page to singlarticle page
-// - When going to the SingleArticle page all article data should be loaded
-// - When should we get the data?
