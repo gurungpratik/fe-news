@@ -24,6 +24,10 @@ export default function SingleArticle() {
   if (isLoading) {
     return <p>Loading...</p>;
   }
+  
+  if (commentList.length === 0) {
+    return <p>No comments found...</p>;
+  }
 
   const articleDate = article.created_at.split("T")[0];
 
