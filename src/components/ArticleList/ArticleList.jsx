@@ -5,7 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import ArticleCard from "../ArticleCard/ArticleCard";
 
 export default function ArticleList() {
-  const [ArticleList, setArticleList] = useState([]);
+  const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState([true]);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function ArticleList() {
     <main className="Articles">
       <NavBar />
       <ul className="Article-list">
-        {ArticleList.map((article) => {
+        {articleList.map((article) => {
             return <ArticleCard key={article.article_id} {...article} />;
         })}
       </ul>
