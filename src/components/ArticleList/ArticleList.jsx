@@ -22,7 +22,7 @@ export default function ArticleList() {
   return (
     <main className="Articles">
       <NavBar />
-      <ul className="Article-list">
+      <ul className="Article-List">
         {articleList.map((article) => {
             return <ArticleCard key={article.article_id} {...article} />;
         })}
