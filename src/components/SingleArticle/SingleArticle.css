@@ -1,0 +1,17 @@
+.Single-Article {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 17rem;
+    overflow-wrap: break-word;
+    border-radius: 10px;
+}
+
+.Article-Author {
+    display: inline;
+}
+
+.Article-Date {
+    display: inline;
+}
