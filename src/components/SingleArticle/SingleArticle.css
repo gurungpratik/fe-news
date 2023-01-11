@@ -7,3 +7,11 @@
     overflow-wrap: break-word;
     border-radius: 10px;
 }
+
+.Article-Author {
+    display: inline;
+}
+
+.Article-Date {
+    display: inline;
+}

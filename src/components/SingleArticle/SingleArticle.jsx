@@ -21,13 +21,16 @@ export default function SingleArticle() {
     return <p>Loading...</p>;
   }
 
+  const articleDate = article.created_at.split("T")[0];
+
   return (
     <main>
       <div className="Single-Article">
-        <h2>{article.title}</h2>
-        <h4>{article.body}</h4>
-        <h5>{article.author}</h5>
-        <h5>{article.created_at}</h5>
+        <h1>{article.title}</h1><br/>
+        <h4>{article.body}</h4><br/>
+        <h4 className="Article-Author">{article.author}</h4><br/>
+        <h6 className="Article-Date">{articleDate}</h6>
+        <br />
       </div>
     </main>
   );
