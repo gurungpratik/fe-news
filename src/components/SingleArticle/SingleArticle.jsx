@@ -23,7 +23,7 @@ export default function SingleArticle() {
 
   return (
     <main>
-      <div className="">
+      <div className="Single-Article">
         <h2>{article.title}</h2>
         <h4>{article.body}</h4>
         <h5>{article.author}</h5>
