@@ -1,6 +1,6 @@
 import "./SingleArticle.css";
 import { useState, useEffect } from "react";
-import { getSingleArticle } from "../../apiFunctions";
+import { getSingleArticle, getArticleComments } from "../../apiFunctions";
 import { useParams } from "react-router-dom";
 import CommentList from "../CommentList/CommentList";
 
@@ -8,15 +8,18 @@ export default function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState([true]);
+  const [commentList, setCommentList] = useState([])
 
-  console.log({ article_id }, "<<<article_id");
   useEffect(() => {
     getSingleArticle(article_id).then((data) => {
-      console.log(data.article, "<<<here");
       setArticle(data.article);
       setIsLoading(false);
     });
-  }, [article_id]);
+    getArticleComments(article_id).then((data) => {
+        console.log(data.comments, "<<<here");
+        setCommentList(data.comments)
+    })
+  }, [article_id, commentList]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -32,6 +35,7 @@ export default function SingleArticle() {
         <h4 className="Article-Author">{article.author}</h4><br/>
         <h6 className="Article-Date">{articleDate}</h6><br/>
       </div>
+      <CommentList commentList={commentList}/>
     </main>
   );
 }

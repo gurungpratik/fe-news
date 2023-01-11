@@ -1,11 +1,13 @@
 import "./CommentCard.css";
-import CommentCard from "../CommentCard/CommentCard";
 
-export default function ArticleList() {
+export default function CommentCard(comment) {
+  const commentDate = comment.created_at.split("T")[0];
 
   return (
     <li className="Comment-Card">
-        CommentCard
+      <h3>{comment.body}</h3>
+      <h3>{comment.author}</h3>
+      <h3>{commentDate}</h3>
     </li>
   );
 }
