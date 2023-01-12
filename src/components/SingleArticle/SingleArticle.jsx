@@ -4,12 +4,14 @@ import { getSingleArticle, getArticleComments } from "../../apiFunctions";
 import { useParams } from "react-router-dom";
 import CommentList from "../CommentList/CommentList";
 import VoteChanger from "../VoteChanger/VoteChanger";
+import CommentAdder from "../CommentAdder/CommentAdder";
+
 
 export default function SingleArticle() {
   const { article_id } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState([true]);
-  const [commentList, setCommentList] = useState([])
+  const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
     getSingleArticle(article_id).then((data) => {
@@ -19,7 +21,7 @@ export default function SingleArticle() {
     getArticleComments(article_id).then((data) => {
         setCommentList(data.comments)
     })
-  }, [article_id]);
+  }, [article_id], setCommentList);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -41,6 +43,7 @@ export default function SingleArticle() {
         <VoteChanger article_id={article.article_id} votes={article.votes}/>
       </div>
       <CommentList commentList={commentList}/>
+      <CommentAdder article_id={article.article_id} setCommentList={setCommentList}/>
     </main>
   );
 }
