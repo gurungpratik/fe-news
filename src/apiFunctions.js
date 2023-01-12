@@ -21,3 +21,9 @@ export const getArticleComments = (article_id) => {
     return data;
   });
 };
+
+export const patchArticle = (article_id, incOrDec) => {
+  return api.patch(`/articles/${article_id}`, { inc_votes: incOrDec }).then(({ data }) => {
+    return data;
+  })
+};

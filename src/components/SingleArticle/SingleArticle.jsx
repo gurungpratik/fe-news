@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getSingleArticle, getArticleComments } from "../../apiFunctions";
 import { useParams } from "react-router-dom";
 import CommentList from "../CommentList/CommentList";
+import VoteChanger from "../VoteChanger/VoteChanger";
 
 export default function SingleArticle() {
   const { article_id } = useParams();
@@ -37,6 +38,7 @@ export default function SingleArticle() {
         <h4>{article.body}</h4><br/>
         <h4 className="Article-Author">{article.author}</h4><br/>
         <h6 className="Article-Date">{articleDate}</h6><br/>
+        <VoteChanger article_id={article.article_id} votes={article.votes}/>
       </div>
       <CommentList commentList={commentList}/>
     </main>
