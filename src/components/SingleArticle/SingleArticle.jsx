@@ -16,10 +16,9 @@ export default function SingleArticle() {
       setIsLoading(false);
     });
     getArticleComments(article_id).then((data) => {
-        console.log(data.comments, "<<<here");
         setCommentList(data.comments)
     })
-  }, [article_id, commentList]);
+  }, [article_id]);
 
   if (isLoading) {
     return <p>Loading...</p>;
