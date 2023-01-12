@@ -1,0 +1,9 @@
+.Comment-Form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.Comment-Input {
+    width: 50%;
+}
