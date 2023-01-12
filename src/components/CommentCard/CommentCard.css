@@ -1,13 +1,19 @@
-.Single-Article {
+.Comment-Card {
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     padding: 0;
-    background: #f2f2f2;
     flex: 0 0 55em;
+    border: 2px solid ;
+    border-color: #f2f2f2;
 }
 
-.Article-Author {
+.Comment-Author {
+    Height: 0px;
+}
+
+.Comment-Height {
     Height: 0px;
 }
