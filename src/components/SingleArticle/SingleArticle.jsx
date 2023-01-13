@@ -21,7 +21,7 @@ export default function SingleArticle() {
     getArticleComments(article_id).then((data) => {
         setCommentList(data.comments)
     })
-  }, [article_id], setCommentList);
+  }, [article_id]);
 
   if (isLoading) {
     return <p>Loading...</p>;

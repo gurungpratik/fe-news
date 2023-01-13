@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 import "./ArticleList.css";
-import { getAllArticles } from "../../apiFunctions";
-import NavBar from "../NavBar/NavBar";
+import { getArticles } from "../../apiFunctions";
 import ArticleCard from "../ArticleCard/ArticleCard";
 
-export default function ArticleList() {
+export default function ArticleList({topic}) {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState([true]);
 
   useEffect(() => {
-    getAllArticles().then((data) => {
+    getArticles(topic).then((data) => {
       setArticleList(data.articles);
       setIsLoading(false);
     });
-  }, []);
+  }, [topic]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -21,7 +20,6 @@ export default function ArticleList() {
 
   return (
     <main className="Articles">
-      <NavBar />
       <ul className="Article-List">
         {articleList.map((article) => {
             return <ArticleCard key={article.article_id} {...article} />;

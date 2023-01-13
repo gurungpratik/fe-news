@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: "https://news-api-bgd0.onrender.com/api",
 });
 
-export const getAllArticles = () => {
-  return api.get("/articles").then(({ data }) => {
+export const getArticles = (topic) => {
+  return api.get(`/articles`, { params: { topic: topic }, }).then(({ data }) => {
     return data;
   });
 };
@@ -39,4 +39,10 @@ export const postComment = (article_id, newComment) => {
     .then(({ data }) => {
       return data;
     });
+};
+
+export const getTopics = () => {
+  return api.get("/topics").then(({ data }) => {
+    return data;
+  });
 };

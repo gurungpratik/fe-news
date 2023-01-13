@@ -1,9 +1,9 @@
-.NavBar {
-    color: #38B8EF;
+.Topics-List {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 0.5em;
-    border: 2px solid#38B8EF;
+    justify-content: space-around;
+    list-style-type: none;
+    background: #dcdcdc;
     padding: 0 14px;
+    font-size: 0.6em;
+    margin: 0;
 }
