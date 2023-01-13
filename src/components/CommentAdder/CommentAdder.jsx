@@ -19,7 +19,7 @@ export default function CommentAdder({ article_id, setCommentList }) {
         setIsPosting(false);
   }).catch((err) => {
     setError("error occured, please try again")
-    setIsPosted(false)
+    setIsPosting(false)
   });
   setNewComment("");
 }

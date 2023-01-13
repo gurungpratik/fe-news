@@ -42,8 +42,9 @@ export default function SingleArticle() {
         <h6 className="Article-Date">{articleDate}</h6><br/>
         <VoteChanger article_id={article.article_id} votes={article.votes}/>
       </div>
-      <CommentList commentList={commentList}/>
+      <br/>
       <CommentAdder article_id={article.article_id} setCommentList={setCommentList}/>
+      <CommentList commentList={commentList}/>
     </main>
   );
 }
